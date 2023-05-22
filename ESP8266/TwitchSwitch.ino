@@ -9,18 +9,18 @@
 #include <ArduinoJson.h>
 #include "TwitchIntegratedServo_Defs.h"
 
-WiFiServer wifiServer(3000);
+WiFiServer wifiServer(WEBHOOK_PORT);
 
 void setup() {
 
   delay(1000);
-  Serial.begin(115200);
+  Serial.begin(115200); // set baud rate
   WiFi.mode(WIFI_OFF);
   delay(1000);
   WiFi.mode(WIFI_STA);
 
   // D0 on the board
-  pinMode(16, OUTPUT);
+  pinMode(D0, OUTPUT);
 
   Serial.println();
   Serial.println("Connecting to WiFi");
@@ -70,9 +70,9 @@ void loop() {
 
     if (body == "live"){
       Serial.println("I just went live");
-        digitalWrite(16, HIGH);       // sets the digital D0 on
+        digitalWrite(D0, HIGH);       // sets the digital D0 on
         delay(10000);                  
-        digitalWrite(16, LOW);        // sets the digital D0 off
+        digitalWrite(D0, LOW);        // sets the digital D0 off
         client.stop();
     }
     }
