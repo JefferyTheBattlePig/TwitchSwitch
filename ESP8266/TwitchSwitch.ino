@@ -7,7 +7,7 @@
 #include <WiFiClientSecure.h>
 #include <ESP8266WiFi.h>
 #include <ArduinoJson.h>
-#include "TwitchIntegratedServo_Defs.h"
+#include "TwitchSwitch.h"
 
 WiFiServer wifiServer(WEBHOOK_PORT);
 
