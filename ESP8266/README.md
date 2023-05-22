@@ -37,12 +37,12 @@ This showcases a single switch setup.
 For power for the microcontroller, you can have it come really from any 5V source. For instance, just plug in a micro usb cable in from a computer, battery bank, or wall wart. for your higher voltage source into the mosfet it can really be anything you want, **just make sure it's DC**
 
 ### Context Diagram
-![image](https://github.com/JefferyTheBattlePig/TwitchSwitch/assets/35508608/dfe2f97e-7121-43a8-938e-8378d262420f)
-
-
+![image](https://github.com/JefferyTheBattlePig/TwitchSwitch/assets/35508608/900256f9-78e6-4177-ac9f-71ab58a53fd8)
 
 ### Run the Code
 Flash the code to the NodeMCU. You can use whatever method you want, however I use the ArduinoIDE. You can find a tutorial on how to flash code on a NodeMCU using the ArduinoIDE [here](https://www.instructables.com/How-to-Program-NodeMCU-on-Arduino-IDE/)
 
+Once you get the code running, check the console for the ESP8266 and get the local IP of the device. This is so you can setup portforwarding to this device.
+
 ## Usage
-Basically just hook up whatever you want, servo motors, TENS units, anything eletric. Just make sure it's DC, and if your going for anything above like 120W make sure your MOSFET can handle it (the one linked can't go over 120W) and you know what your doing, don't anger the magic pixies in your walls by being a dumbass (they're mean).
+Basically just hook up whatever you want, servo motors, TENS units, eletric bb guns, anything eletric. Just make sure it's DC, and if your going for anything above like 120W make sure your MOSFET can handle it (the one linked can't go over 120W) and you know what your doing, don't anger the magic pixies in your walls by being a dumbass (they're mean).
