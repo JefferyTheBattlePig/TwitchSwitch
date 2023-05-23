@@ -44,10 +44,13 @@ void setup() {
 
 void loop() {
 
+  // setup HTTP server
   WiFiClient client = wifiServer.available();
   
   if (client) {
+    // if something connects
     while (client.connected()) {
+      Ser
  
       String payload = "";
       bool isJSON = false;
@@ -67,11 +70,11 @@ void loop() {
     deserializeJson(doc, payload);
 
     String body = doc["body"];
-
-    if (body == "live"){
-      Serial.println("I just went live");
+    // if the body of the json payload was a sub or follow
+    if (body == "subscription" || body == "follow"){
+      Serial.println("Trigger");
         digitalWrite(D0, HIGH);       // sets the digital D0 on
-        delay(10000);                  
+        delay(10000);                 // toggle D0 high for 10 seconds                  
         digitalWrite(D0, LOW);        // sets the digital D0 off
         client.stop();
     }
